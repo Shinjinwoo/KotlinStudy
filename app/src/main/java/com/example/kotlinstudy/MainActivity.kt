@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlinstudy.adapter.MyRecyclerAdapter
 import com.example.kotlinstudy.clickinterface.MyRecyclerViewInterface
@@ -54,8 +55,21 @@ class MainActivity : AppCompatActivity(),MyRecyclerViewInterface {
 
     }
 
-    override fun onItemClicked() {
-        Toast.makeText(App.instance,"클릭됨",Toast.LENGTH_LONG).show()
+    override fun onItemClicked(position:Int) {
+
+        var name: String? = null
+
+        var title: String = this.modelList[position].name ?: ""
+
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage("민지와 함께하는 빡코딩 :) ")
+            .setPositiveButton("연봉 5천 드가자") {
+                dialog,id ->
+                Log.d(TAG,"MainActivity - onItemClicked() -> 다이얼로그 확인버튼 클릭")
+                Toast.makeText(App.instance,"가주아아아아아아악",Toast.LENGTH_LONG).show()
+            }
+            .show()
     }
 
 }

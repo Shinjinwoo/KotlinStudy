@@ -46,6 +46,6 @@ class MyViewHolder(itemView: View,
 
     override fun onClick(p0: View?) {
         Log.d(TAG,"MyViewHolder - onClick() called")
-        this.myRecyclerViewInterface?.onItemClicked()
+        this.myRecyclerViewInterface?.onItemClicked(adapterPosition)
     }
 }
