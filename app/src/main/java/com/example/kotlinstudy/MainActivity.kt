@@ -65,6 +65,8 @@ class MainActivity : AppCompatActivity(),MyRecyclerViewInterface {
             .setTitle(title)
             .setMessage("민지와 함께하는 빡코딩 :) ")
             .setPositiveButton("연봉 5천 드가자") {
+                //5000으로 멈추지 않아 !
+
                 dialog,id ->
                 Log.d(TAG,"MainActivity - onItemClicked() -> 다이얼로그 확인버튼 클릭")
                 Toast.makeText(App.instance,"가주아아아아아아악",Toast.LENGTH_LONG).show()
